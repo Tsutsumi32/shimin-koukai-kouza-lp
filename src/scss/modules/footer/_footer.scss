@@ -94,6 +94,7 @@ footer
   background-color: $color_theme_light4;
   text-align: center;
   padding: 1.6rem 1.4rem;
+  color: $color_theme;
   @include pc {
     padding-block: 3rem;
   }

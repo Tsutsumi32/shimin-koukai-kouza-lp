@@ -11,6 +11,7 @@ block - contact
   padding: 2rem 4rem 2rem 1rem;
   margin-top: 2.8rem;
   background-color: $color_white;
+  border-right: 0;
   @include tab-only {
     padding-inline: 3rem;
   }
@@ -23,6 +24,8 @@ block - contact
   &#{$_bk}__reverse {
     border-radius: 0 0 3rem 0;
     padding: 2rem 1rem 2rem 4rem;
+    border: .6rem solid $color_theme;
+    border-left: 0;
     @include pc {
       border-radius: 0 0 5rem 0;
     }
