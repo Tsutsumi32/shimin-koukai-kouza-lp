@@ -13,7 +13,6 @@ use component
 @use '../modules/blocks/notice' as *;
 
 /* elements */
-@use '../modules/elements/btn' as *;
 @use '../modules/elements/ttl' as *;
 
 /*==========================================================================*/
@@ -891,8 +890,4 @@ $decoration_position_sp: (-19rem, -19rem), (16rem, -19rem), (-19rem, 22rem),
   img {
     width: 100%;
   }
-}
-
-a {
-  @include hover-opacity;
 }
