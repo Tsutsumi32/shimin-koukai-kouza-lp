@@ -1,0 +1,18 @@
+@use '../variables/variables' as *;
+@use './media' as *;
+/******************************************************************
+* container　コンテナ幅を設定する
+*******************************************************************/
+@mixin container($max: 0) {
+  margin-inline: auto;
+  width: $width_container_sp;
+  @include tab {
+    width: calc($width_container_sp * 0.95);
+  }
+  @include pc {
+    width: $width_container_pc;
+    @if $max != 0 {
+      width: calc($max / 10 * 1rem);
+    }
+  }
+}

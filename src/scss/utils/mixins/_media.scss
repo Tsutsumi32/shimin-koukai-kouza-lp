@@ -1,0 +1,110 @@
+@use '../functions/strip-unit' as *;
+@use '../variables/variables' as *;
+/******************************************************************
+* メディアクエリ
+*******************************************************************/
+/* SPのみ
+----------------------------------------------------------------- */
+@mixin sp-only() {
+  @media screen and (width < strip-unit($break_tab, 1px)) {
+    @content;
+  }
+}
+
+/* タブ以上
+----------------------------------------------------------------- */
+@mixin tab() {
+  @media screen and (strip-unit($break_tab, 1px) <= width) {
+    @content;
+  }
+}
+
+/* TABL以上
+----------------------------------------------------------------- */
+@mixin tab-l() {
+  @media screen and (strip-unit($break_tabL, 1px) <= width) {
+    @content;
+  }
+}
+
+/* タブレイアウトのみ
+----------------------------------------------------------------- */
+@mixin tab-only() {
+  @media screen and (strip-unit($break_tab, 1px) <= width < strip-unit($break_pc, 1px)) {
+    @content;
+  }
+}
+
+/* TAB以下のみ
+----------------------------------------------------------------- */
+@mixin sp-tab-only() {
+  @media screen and (width < strip-unit($break_pc, 1px)) {
+    @content;
+  }
+}
+
+/* PC以上
+----------------------------------------------------------------- */
+@mixin pc() {
+  @media screen and (strip-unit($break_pc, 1px) <= width) {
+    @content;
+  }
+}
+
+/* PCのみ
+----------------------------------------------------------------- */
+@mixin pc-only() {
+  @media screen and (strip-unit($break_pc, 1px) <= width < strip-unit($break_pcL, 1px)) {
+    @content;
+  }
+}
+
+/* PCL以上
+----------------------------------------------------------------- */
+@mixin pc-l() {
+  @media screen and (strip-unit($break_pcL, 1px) <= width) {
+    @content;
+  }
+}
+
+/* PCLのみ
+----------------------------------------------------------------- */
+@mixin pc-l-only() {
+  @media screen and (strip-unit($break_pcL, 1px) <= width < strip-unit($break_pcLL, 1px)) {
+    @content;
+  }
+}
+
+/* PCLL以上
+----------------------------------------------------------------- */
+@mixin pc-ll() {
+  @media screen and (strip-unit($break_pcLL, 1px) <= width) {
+    @content;
+  }
+}
+
+/* 高さメディアクエリ
+$break ～$break(含まない)の高さに適用
+----------------------------------------------------------------- */
+@mixin height-media-max($break) {
+  @media screen and ($break <= height) {
+    @content;
+  }
+}
+
+/* 高さメディアクエリ
+$break $break～の高さに適用
+----------------------------------------------------------------- */
+@mixin height-media-min($break) {
+  @media screen and ($break > height) {
+    @content;
+  }
+}
+
+/* 印刷時
+----------------------------------------------------------------- */
+@mixin print {
+  @media print {
+    @content;
+  }
+}

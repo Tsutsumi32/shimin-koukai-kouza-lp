@@ -1,0 +1,139 @@
+/*-==========================================================================
+block - access
+==========================================================================*/
+@use '../../utils/' as *;
+
+/*==========================================================================*/
+.bl_access {
+  margin-top: 6rem;
+
+  @include pc {
+    display: flex;
+    gap: 5rem;
+  }
+
+  &_info {
+    @include pc {
+      width: 50.5rem;
+    }
+  }
+
+  &_label {
+    @include pc {
+      display: flex;
+      gap: 1.6rem;
+      align-items: center;
+    }
+
+    img {
+      border-radius: 100vh;
+      width: 8.2rem;
+      display: block;
+      margin-inline: auto;
+      position: relative;
+      left: -2rem;
+      border: max(.2rem, 2px) solid $color_white;
+      z-index: 1;
+
+      @include pc {
+        position: static;
+        width: 10.3rem;
+        margin: 0
+      }
+    }
+  }
+
+  &_date {
+    @include font(24, 32, 0, 700);
+    color: $color_white;
+    background-color: $color_theme;
+    padding: 2rem;
+    position: relative;
+    top: -.8rem;
+    margin-bottom: -.8rem;
+
+    @include pc {
+      font-size: 3.2rem;
+      flex-basis: 0;
+      flex-grow: 1;
+      padding-block: 1rem;
+      height: fit-content;
+    }
+  }
+
+  &_list {
+    margin-top: 2rem;
+    padding-right: 4rem;
+    @include pc {
+      padding-right: 0;
+      padding-left: 1rem;
+    }
+  }
+
+  &_listItem {
+    @include font(18, 24, 0, 500);
+    display: flex;
+    gap: .6rem;
+    @include pc {
+      font-size: 2.2rem;
+    }
+
+    &:nth-of-type(n + 2) {
+      margin-top: .4rem;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      background-color: $color_theme;
+      min-width: 1.5rem;
+      height: 1.5rem;
+      margin-top: .3rem;
+    }
+
+    li {
+      position: relative;
+      padding-left: 0;
+
+      &:nth-of-type(n + 2) {
+        margin-top: .6rem;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        background-color: $color_theme;
+        width: .7rem;
+        height: .7rem;
+        margin-top: .4rem;
+        position: absolute;
+        top: .4rem;
+        left: -1.2rem;
+      }
+    }
+  }
+
+  &_map {
+    background-color: $color_theme;
+    padding: 3.5rem;
+    padding-right: 5rem;
+    margin-top: 3rem;
+    @include pc {
+      flex-basis: 0;
+      flex-grow: 1;
+      margin-top: 0;
+      padding: 4rem;
+      height: fit-content;
+    }
+
+    iframe {
+      aspect-ratio: 265 / 228;
+      width: 100%;
+      height: auto;
+      @include pc {
+        aspect-ratio: 1 / 1;
+        max-width: 50rem;
+      }
+    }
+  }
+}

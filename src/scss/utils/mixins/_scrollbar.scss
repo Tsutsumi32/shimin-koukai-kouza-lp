@@ -1,0 +1,22 @@
+@use '../variables/variables' as *;
+/******************************************************************
+* スクロールバーデザイン
+*******************************************************************/
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color_04;
+    border-radius: 100vh;
+  }
+}
+
+@mixin scrollbar_none {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}

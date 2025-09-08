@@ -1,0 +1,172 @@
+/*-==========================================================================
+block - eventCard
+==========================================================================*/
+@use '../../utils/' as *;
+
+/*==========================================================================*/
+.bl_eventCard {
+  $_bk: &;
+  background-color: $color_white;
+  padding: .8rem 1rem 2rem;
+  position: relative;
+  border-radius: 0 0 4rem 4rem;
+
+  @include tab {
+    padding-block: 3rem;
+  }
+
+  @include pc {
+    padding-top: 7rem;
+    padding-inline: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 4rem !important;
+  }
+
+  &:first-of-type {
+    padding-bottom: 3rem;
+    border-radius: 0 0 6rem 6rem;
+
+    @include pc {
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &:nth-of-type(2) {
+    margin-top: 5rem;
+
+    @include pc {
+      border-radius: 0;
+      margin-top: 0;
+    }
+
+    &::before,
+    &::after {
+      @include pc {
+        content: "";
+        display: block;
+        @include background-image('line_dots', $_type: 'svg');
+        height: 21.8rem;
+        width: .6rem;
+        position: absolute;
+        top: 3rem;
+      }
+    }
+
+    &::before {
+      @include pc {
+        left: -.3rem;
+      }
+    }
+
+    &::after {
+      @include pc {
+        right: -.3rem;
+        z-index: 1;
+      }
+    }
+  }
+
+  &:last-of-type {
+    @include pc {
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &_head {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    border-bottom: max(.1rem, 1px) solid $color_theme;
+    padding-bottom: 1rem;
+    @include tab-only {
+      width: fit-content;
+      margin-inline: auto;
+    }
+  }
+
+  &_icon {
+    aspect-ratio: 1 / 1;
+    width: auto;
+    height: 6.8rem;
+
+    @include pc {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      height: 10rem;
+    }
+
+    img {
+      width: auto;
+      height: 100%
+    }
+  }
+
+  &_ttl {
+    @include font(24, 32, 0, 700);
+    flex-basis: 0;
+    flex-grow: 1;
+
+    @include tab-only {
+      width: fit-content;
+    }
+
+    @include pc {
+      font-size: 3.2rem;
+      text-align: center;
+    }
+  }
+
+  &_em {
+    color: $color_theme;
+    background-color: $color_theme_light3;
+    border: max(.1rem, 1px) solid $color_theme;
+    padding: .2rem;
+    margin-right: .4rem;
+  }
+
+  &_meta {
+    @include font(20, 24, 0, 500);
+    text-align: center;
+    padding-top: 1rem;
+
+    @include pc {
+      font-size: 1.8rem;
+    }
+  }
+
+  &_date {
+    @include font(24, 24, 0, 700);
+
+    @include pc {
+      font-size: 3.2rem;
+      padding-bottom: .6rem;
+    }
+  }
+
+  &_cta {
+    @include font(19, 19, 0, 700);
+    display: block;
+    color: $color_white;
+    text-align: center;
+    width: fit-content;
+    margin-inline: auto;
+    border: .3rem solid $color_accent;
+    padding: 1.2rem 2.4rem;
+    border-radius: 100vh;
+    margin-top: 1rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(253, 248, 248, 1) 4.76%, rgba(248, 230, 230, 1) 11.56%, rgba(239, 200, 199, 1) 19.57%, rgba(228, 158, 156, 1) 28.52%, rgba(213, 105, 102, 1) 38.11%, rgba(196, 46, 41, 1) 47.55%, rgba(196, 46, 41, 1) 100%);
+
+    @include pc {
+      font-size: 1.96rem;
+      margin-top: 0;
+      padding: 2rem 4rem;
+      border-radius: 2.3rem;
+      margin-top: 1.6rem;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+/*-==========================================================================
+block - notice
+==========================================================================*/
+@use '../../utils/' as *;
+/*==========================================================================*/
+.bl_notice {
+  padding-inline: 1.6rem;
+  position: relative;
+  &_ttl {
+    @include font(24, 24, 0, 700);
+    color: $color_theme;
+    padding-bottom: 1rem;
+    border-bottom: max(.2rem, 2px) solid $color_theme;
+    @include pc {
+      font-size: 3.2rem;
+    }
+  }
+
+  &_list {
+    margin-top: 1rem;
+    @include pc {
+      margin-top: 1.6rem;
+    }
+  }
+
+  &_item {
+    @include font(18, 24, 0, 500);
+    display: flex;
+    gap: .6rem;
+    &:nth-of-type(n + 2) {
+      margin-top: .4rem;
+    }
+    &::before {
+      content: "";
+      display: block;
+      background-color: $color_theme;
+      min-width: 1.5rem;
+      height: 1.5rem;
+      margin-top: .3rem;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@use '../variables/variables' as *;
+/******************************************************************
+* font フォントスタイルを設定する
+* @param $_size サイズ
+* @param $_line 行間
+* @param $_space 文字間
+* @param $_weight 太さ
+* @param $_family フォント
+*******************************************************************/
+// フォントスタイル(XD)
+// @mixin font($_size, $_line, $_space, $_weight: 400, $_family: $font-f_biz) {
+//   font-family: $_family;
+//   font-weight: $_weight;
+//   font-size: calc($_size / 10 * 1rem);
+//   letter-spacing: calc($_space / 1000 * 1em);
+//   line-height: $_line / $_size
+// }
+
+// フォントスタイル(XD)
+@mixin font($size, $line, $space, $weight: 400) {
+  font-family: $font-f_noto;
+  font-weight: $weight;
+  font-size: calc($size / 10 * 1rem);
+  letter-spacing: calc($space / 1000 * 1em);
+  line-height: calc($line / $size);
+}

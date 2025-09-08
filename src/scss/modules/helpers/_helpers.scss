@@ -1,0 +1,90 @@
+/*-==========================================================================
+helper
+==========================================================================*/
+@use '../../utils' as *;
+
+.hp_tac {
+  text-align: center !important;
+}
+
+.hp_noneSp {
+  display: none !important;
+  @include tab {
+    display: block !important;
+  }
+}
+
+.hp_noneSpFlex {
+  display: none !important;
+  @include tab {
+    display: flex !important;
+  }
+}
+
+.hp_noneSpInline {
+  display: none !important;
+  @include tab {
+    display: inline !important;
+  }
+}
+
+.hp_nonePc {
+  @include pc {
+    display: none !important;
+  }
+}
+
+.hp_noneSpTab {
+  display: none !important;
+  @include pc {
+    display: block !important;
+  }
+}
+
+.hp_noneSpTabInline {
+  display: none !important;
+  @include pc {
+    display: inline !important;
+  }
+}
+
+.hp_noneSpTabFlex {
+  display: none !important;
+  @include pc {
+    display: flex !important;
+  }
+}
+
+.hp_noneTabPc {
+  @include tab {
+    display: none !important;
+  }
+}
+
+.hp_noneTab {
+  @include tab-only {
+    display: none !important;
+  }
+}
+
+.hp_noneTabInline {
+  display: inline !important;
+  @include tab-only {
+    display: none !important;
+  }
+}
+
+.hp_noneTabFlex {
+  display: flex !important;
+  @include tab-only {
+    display: none !important;
+  }
+}
+
+.hp_block {
+  display: block !important;
+}
+
+.hp_hidden {
+  display: none;
+}

@@ -1,0 +1,898 @@
+/*-==========================================================================
+page
+==========================================================================*/
+@use '../utils/' as *;
+/*==========================================================================
+use component
+/*==========================================================================*/
+/* blocks */
+@use '../modules/blocks/access' as *;
+@use '../modules/blocks/contact' as *;
+@use '../modules/blocks/eventCard' as *;
+@use '../modules/blocks/eventList' as *;
+@use '../modules/blocks/notice' as *;
+
+/* elements */
+@use '../modules/elements/btn' as *;
+@use '../modules/elements/ttl' as *;
+
+/*==========================================================================*/
+.un-mv {
+  position: relative;
+
+  @include tab {
+    height: 46rem;
+  }
+
+  @include pc {
+    height: 86rem;
+    margin-bottom: 4rem;
+  }
+
+  @include pc-l {}
+
+  @include pc-ll {}
+
+  &_text {
+    width: 28.1rem;
+    margin-inline: auto;
+    padding-top: 5rem;
+    transform: translateY(2rem);
+    opacity: 0;
+    transition: transform .8s ease-in-out, opacity .8s ease-in-out;
+
+    &.is_active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @include tab {
+      width: 26rem;
+    }
+
+    @include pc {
+      width: 65.8rem;
+      padding-top: 12rem;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &_illust {
+    display: flex;
+    position: relative;
+    top: -1rem;
+    margin-bottom: -2rem;
+
+    @include tab {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-bottom: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    @include pc {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-bottom: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    picture {
+      &:nth-of-type(1) {
+        img {
+          width: 20rem;
+
+          @include tab {
+            width: 17.7rem;
+            position: absolute;
+            top: calc(50%);
+            left: calc(50% - 21rem);
+            transform: translate(-50%, -50%);
+          }
+
+          @include pc {
+            width: 35.7rem;
+            position: absolute;
+            top: calc(50% + 3rem);
+            left: calc(50% - 45rem);
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        position: relative;
+        left: -1.8rem;
+        top: -.2rem;
+
+        @include tab {
+          position: static;
+        }
+
+        img {
+          width: 19.1rem;
+
+          @include tab {
+            width: 16.2rem;
+            position: absolute;
+            top: calc(50%);
+            left: calc(50% + 20.5rem);
+            transform: translate(-50%, -50%);
+          }
+
+          @include pc {
+            width: 34.9rem;
+            position: absolute;
+            top: calc(50%);
+            left: calc(50% + 43rem);
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+
+  $decoration_with: 44.5rem, 40.4rem, 40.4rem, 44.5rem, 40.4rem, 27.6rem, 27.6rem, 40.4rem;
+  $decoration_position: (
+    -88rem,
+    -44rem),
+    (-53rem, -15rem),
+    (43rem, -26rem),
+    (87rem, -47rem),
+    (-79rem, 19rem),
+    (-22rem, 36rem),
+    (28.1rem, 35rem),
+    (77.2rem, 20rem
+  );
+$decoration_with_sp: 23.4rem, 23.4rem, 23.4rem, 23.4rem;
+$decoration_position_sp: (-19rem, -19rem), (16rem, -19rem), (-19rem, 22rem),
+(16rem, 22rem);
+
+&_decoration {
+  @include background-image('img_decoration', $_type: 'svg');
+  aspect-ratio: 404 / 357;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity .8s;
+
+  &.is_active {
+    opacity: 1;
+  }
+
+  @for $i from 1 through length($decoration_with_sp) {
+    &:nth-of-type(#{$i}) {
+      width: nth($decoration_with_sp, $i);
+      left: calc(50% + nth(nth($decoration_position_sp, $i), 1));
+      top: calc(50% + nth(nth($decoration_position_sp, $i), 2));
+    }
+    &:nth-of-type(n + 5) {
+      display: none;
+      @include pc {
+        display: block;
+      }
+    }
+  }
+
+  @include pc {
+    @for $i from 1 through length($decoration_with) {
+      &:nth-of-type(#{$i}) {
+        width: nth($decoration_with, $i);
+        left: calc(50% + nth(nth($decoration_position, $i), 1));
+        top: calc(50% + nth(nth($decoration_position, $i), 2));
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+}
+
+.un_link {
+  $_bk: &;
+  background-color: $color_theme_light;
+  padding-block: 4rem 6rem;
+
+  @include pc {
+    padding-block: 9rem 14rem;
+  }
+
+  &#{$_bk}__ptLg {
+    padding-block: 6rem;
+
+    @include pc {
+      padding-block: 9rem 5rem;
+    }
+  }
+
+}
+
+.un_notice {
+  @include font(20, 24, 0, 500);
+  text-align: center;
+  margin-top: 1.6rem;
+  background-color: $color_white;
+  border: max(.2rem, 2px) solid $color_black;
+  padding: 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translate(-50%, 100%);
+  width: 97%;
+
+  @include pc {
+    font-size: 2.2rem;
+    width: fit-content;
+    position: relative;
+    transform: translate(0);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: auto;
+    top: -2.4rem;
+    margin-top: 0;
+    margin-bottom: -2.4rem;
+  }
+}
+
+.un_infoSection {
+  background-color: $color_theme;
+  padding-block: 3rem 2rem;
+  position: relative;
+
+  @include pc {
+    padding-block: 0 6rem;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6rem;
+    background-color: $color_theme;
+    clip-path: polygon(50% 100%, 100% 0, 100% 100%, 0 100%, 0 0);
+    position: absolute;
+    top: .1rem;
+    left: 0;
+    transform: translateY(-100%);
+
+    @include pc {
+      height: 20rem;
+    }
+  }
+
+  &_body {
+    background-color: $color_white;
+    padding: 2rem 2.5rem;
+
+    @include pc {
+      position: relative;
+      top: -9rem;
+      margin-bottom: -9rem;
+      padding-block: 4rem 3rem;
+      padding-inline: 5rem;
+    }
+  }
+
+  &_ttl {
+    @include font(24, 32, 0, 700);
+
+    @include pc {
+      font-size: 3.2rem;
+    }
+  }
+
+  &_lead {
+    @include font(20, 30, 0, 500);
+    margin-top: 2rem;
+
+    @include pc {
+      font-size: 2.2rem;
+    }
+  }
+
+  &_textInner {
+    margin-top: 2rem;
+
+    @include pc {
+      margin-top: 4rem;
+      display: flex;
+      gap: 3rem;
+    }
+  }
+
+  &_textWrap {
+    @include pc {
+      flex-basis: 0;
+      flex-grow: 1;
+      height: fit-content;
+    }
+  }
+
+  &_txt {
+    @include font(20, 30, 0, 500);
+
+    &:nth-of-type(n + 2) {
+      margin-top: 2rem;
+
+      @include pc {
+        margin-top: 3.6rem;
+      }
+    }
+  }
+
+  &_notes {
+    @include font(18, 24, 0, 500);
+    margin-top: 2rem;
+
+    @include pc {
+      margin-top: 0;
+    }
+  }
+
+  &_caution {
+    color: $color_accent;
+    margin-top: 1rem;
+
+    @include pc {
+      margin-top: 0;
+    }
+  }
+
+  &_img {
+    width: 20rem;
+    margin-inline: auto;
+    margin-top: 1rem;
+
+    @include pc {
+      width: 24.8rem;
+      position: relative;
+      top: -4rem;
+      left: -1rem;
+      margin-bottom: -6rem;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.un_access {
+  padding-block: 4rem 6rem;
+
+  @include pc {
+    padding-block: 9rem 12rem;
+  }
+
+  &_contents {
+    $_bk: &;
+    padding-left: 4rem;
+    position: relative;
+
+    @include pc {
+      max-width: 154.2rem;
+      margin-left: auto;
+    }
+
+    &#{$_bk}__reverse {
+      padding-left: 0;
+      padding-right: 4rem;
+
+      @include pc {
+        margin-inline: 0 auto;
+      }
+
+      .bl_access {
+        @include pc {
+          flex-direction: row-reverse;
+        }
+      }
+
+      .bl_access_map {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .bl_access_label {
+        img {
+          left: auto;
+          right: -2rem;
+        }
+      }
+
+      .bl_access_list {
+        padding-right: 0;
+        padding-left: 4rem;
+      }
+    }
+
+    &:nth-of-type(n + 2) {
+      margin-top: 6rem;
+    }
+  }
+
+  .bl_notice {
+    margin-top: 7rem;
+  }
+}
+
+.un_program {
+  padding-block: 6rem;
+
+  @include pc {
+    padding-bottom: 9rem;
+  }
+}
+
+.el_ttl {
+  &__program {
+    img {}
+  }
+}
+
+.un_seminar {
+  border: max(.2rem, 2px) solid $color_black;
+  padding-bottom: 2rem;
+  position: relative;
+  margin-top: 3rem;
+
+  &::before {
+    content: "";
+    display: block;
+    background-color: $color_theme;
+    width: 2.1rem;
+    height: 2.1rem;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &::after {
+    @include background-image('bg_program_sp', $_type: 'svg');
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include pc {
+      @include background-image('bg_program', $_type: 'svg');
+      height: calc(100% - 10rem);
+      top: 10rem;
+    }
+  }
+
+  &_head {
+    border-bottom: max(.2rem, 2px) solid $color_black;
+    background-color: $color_theme_light2;
+    padding: 2rem;
+    position: relative;
+
+    @include pc {
+      padding: 2rem;
+    }
+
+    span {
+      @include font(24, 24, 0, 700);
+      padding: .8rem;
+      background-color: $color_white;
+      display: block;
+      margin-inline: auto;
+      width: fit-content;
+
+      @include pc {
+        font-size: 3.2rem;
+        padding: 1.3rem;
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      border: .4rem solid $color_white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+
+      @include pc {
+        border-width: .6rem;
+      }
+    }
+  }
+
+  &_body {
+    $_bk: &;
+    padding-inline: 1.6rem;
+
+    &#{$_bk}__pcFlex {
+      @include pc {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .un_seminar_note {
+        @include pc {
+          flex-basis: 0;
+          flex-grow: 1;
+        }
+      }
+
+      .un_seminar_list {
+        @include pc {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &_ttl {
+    @include font(24, 32, 0, 700);
+    text-align: center;
+    padding-block: 1.7rem 2.5rem;
+
+    @include pc {
+      font-size: 3.2rem;
+      text-align: left;
+    }
+  }
+
+  &_content {
+    background-color: $color_gray;
+    padding: .8rem;
+
+    @include pc {
+      display: flex;
+      gap: 5.2rem;
+    }
+  }
+
+  &_list {
+    padding-inline: 1rem;
+
+    @include pc {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+  }
+
+  &_listTtl {
+    @include font(20, 20, 0, 500);
+    text-align: center;
+    background-color: $color_white;
+    padding-block: 1rem;
+    margin-bottom: 1rem;
+    color: $color_theme;
+
+    @include pc {
+      font-size: 2.2rem;
+      min-width: 11.3rem;
+      width: 11.3rem;
+      height: 11.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &_listItem {
+    @include font(20, 30, 0, 500);
+    display: flex;
+    gap: .8rem;
+
+    @include pc {
+      font-size: 2.2rem;
+    }
+
+    &:nth-of-type(n + 2) {
+      margin-top: .8rem;
+
+      @include pc {
+        margin-top: 0;
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      background-color: $color_theme;
+      min-width: 1.2rem;
+      height: 1.2rem;
+      transform: rotate(45deg);
+      position: relative;
+      top: .8rem;
+    }
+  }
+
+  &_prof {
+    @include pc {
+      position: relative;
+    }
+
+    &::before {
+      @include pc {
+        content: "";
+        display: block;
+        height: 9.9rem;
+        border-left: max(.2rem, 2px) solid $color_white;
+        position: absolute;
+        top: 50%;
+        left: -2.4rem;
+        transform: translateY(-50%);
+      }
+    }
+
+    &-img {
+      width: 18.2rem;
+      margin-inline: auto;
+      margin-top: 3rem;
+
+      @include pc {
+        position: relative;
+      }
+
+      img {
+        width: 100%;
+
+        @include pc {
+          position: absolute;
+          width: 18.2rem;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -100%);
+          z-index: 1;
+        }
+      }
+    }
+
+    &-info {
+      margin-top: 1.82rem;
+    }
+
+    &-name {
+      @include font(22, 27, 0, 500);
+      color: $color_theme;
+      text-align: center;
+      position: relative;
+      padding-bottom: .8rem;
+      width: fit-content;
+      margin-inline: auto;
+
+      @include pc {
+        padding-top: .4rem;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        border-bottom: max(.2rem, 1px) solid $color_theme;
+        width: 90%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &-meta {
+      @include font(16, 18, 0, 500);
+      margin-top: 1.8rem;
+      text-align: center;
+      padding-bottom: 3rem;
+
+      @include pc {
+        margin-top: .6rem;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &_note {
+    @include font(18, 24, 0, 500);
+    margin-top: 1.6rem;
+  }
+
+  &_noteItem {
+    display: flex;
+
+    &::before {
+      content: "※";
+    }
+  }
+}
+
+.un-seminarAnnotation {
+  @include font(18, 24, 0, 500);
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+  display: flex;
+
+  @include pc {
+    width: fit-content;
+    margin-left: auto;
+    margin-bottom: 4rem;
+  }
+
+  &::before {
+    content: "※";
+  }
+}
+
+.un_decoration_imgWrap {
+  $_bk: &;
+  position: absolute;
+  z-index: -1;
+
+  @include pc {
+    z-index: 1;
+  }
+
+  &#{$_bk}__1 {
+    transform: translate(-70%, -100%);
+    top: 3rem;
+    left: 7rem;
+    width: 30.2rem;
+    z-index: -1;
+
+    @include pc {
+      transform: translate(-100%, -100%);
+      top: 3rem;
+      left: 7rem;
+      width: 30.9rem;
+    }
+  }
+
+  &#{$_bk}__2 {
+    transform: translate(20%, 50%);
+    top: 40%;
+    right: 0;
+    width: 30.2rem;
+
+    @include pc {
+      transform: translate(100%, 50%);
+      top: -6rem;
+      right: 7rem;
+      width: 29.5rem;
+    }
+  }
+
+  &#{$_bk}__3 {
+    transform: translate(-65%, 0);
+    top: 40%;
+    left: 7rem;
+    width: 30.2rem;
+
+    @include pc {
+      transform: translate(-100%, 0);
+      top: 0;
+      left: 5rem;
+      width: 30.9rem;
+    }
+  }
+
+  &#{$_bk}__4 {
+    transform: translate(55%, 33%);
+    top: 140%;
+    right: 0;
+    width: 30.2rem;
+
+    @include pc {
+      transform: translate(100%, 100%);
+      top: 6rem;
+      right: 7rem;
+      width: 29.5rem;
+    }
+  }
+
+  &#{$_bk}__5 {
+    transform: translate(-50%, 0);
+    top: 86%;
+    left: 0;
+    width: 30.9rem;
+
+    @include pc {
+      transform: translate(-85%, 70%);
+      top: 3rem;
+      left: 2.4rem;
+      width: 30.9rem;
+    }
+  }
+
+  &#{$_bk}__6 {
+    transform: translate(47%, -23%);
+    top: 0;
+    right: 0;
+    width: 30.9rem;
+
+    @include pc {
+      display: none;
+    }
+  }
+
+  &#{$_bk}__7 {
+    transform: translate(-42%, 0);
+    top: 43.6%;
+    left: 0;
+    width: 30.9rem;
+
+    @include pc {
+      transform: translate(-72%, 77%);
+      top: 3rem;
+      left: 2.4rem;
+      width: 40.4rem;
+    }
+  }
+
+  &#{$_bk}__8 {
+    transform: translate(42%, -47%);
+    top: 0;
+    right: 0;
+    width: 30.9rem;
+
+    @include pc {
+      top: 35%;
+      width: 40.4rem;
+    }
+  }
+
+  &#{$_bk}__9 {
+    transform: translate(-40%, 0);
+    top: 43.6%;
+    left: 0;
+    width: 30.9rem;
+
+    @include pc {
+      display: none;
+    }
+  }
+
+  &#{$_bk}__10 {
+    transform: translate(53%, -64%);
+    top: 0;
+    right: 0;
+    width: 30.9rem;
+
+    @include pc {
+      display: none;
+    }
+  }
+
+  &#{$_bk}__11 {
+    transform: translate(-48%, 0);
+    top: 70%;
+    left: 0;
+    width: 30.9rem;
+
+    @include pc {
+      transform: translate(-70%, 0);
+      top: -2rem;
+      left: 0;
+      width: 40.4rem;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+a {
+  @include hover-opacity;
+}

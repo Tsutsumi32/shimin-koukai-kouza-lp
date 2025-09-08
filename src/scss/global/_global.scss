@@ -1,0 +1,86 @@
+/*-==========================================================================
+共通設定
+==========================================================================*/
+@use '../utils/' as *;
+
+html {
+  // スムーススクロールはjsで制御。画面遷移を伴う場合の位置調整のために
+  // scroll-padding-top: calc($height_header_sp + 5.2rem);
+  // scroll-behavior: smooth;
+  // プロポーショナルメトリクス有効
+  // font-feature-settings: "palt";
+
+  // SP   リキッド
+  // SPL  リキッド 基準点を変更
+  // Tab  リキッド レイアウト・基準点変更
+  // PC   リキッド レイアウト・基準点変更
+  // PCL  レスポンシブ (基本デザインサイズを想定・左右の余白が大きくなる)
+  // PCLL リキッド
+  font-size: calc(10 / $liquid_point_sp * 100vw);
+  @include tab {
+    // font-size: calc(vw-to-pixel(10, $liquid_point_sp, $break_tab) * 0.65);
+    font-size: calc(10 / $liquid_point_tab * 100vw);
+  }
+  @include tab-l {
+    font-size: calc(10 / $liquid_point_tabL * 100vw);
+  }
+  @include pc {
+    font-size: calc(10 / $liquid_point_pc * 100vw);
+    // scroll-padding-top: calc($height_header_pc + 5.2rem);
+  }
+  @include pc-l {
+    font-size: vw-to-pixel(10, $liquid_point_pc, $break_pcL);
+  }
+  @include pc-ll {
+    // 大きいサイズでリキッドにする場合に使用
+    font-size: calc(10 / $liquid_point_pcL * 100vw);
+  }
+}
+
+body {
+  word-break: break-word;
+  // word-break: break-all;
+  // デザインの改行方法によって変更する
+  line-break: strict;
+  background-color: $color_white;
+  color: $color_black;
+  width: 100%;
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+textarea,
+dt,
+dd,
+button {
+  line-height: inherit;
+}
+
+textarea {
+  resize: vertical;
+  overflow-y: auto;
+}
+
+a,
+span {
+  display: inline-block;
+}
+
+button {
+  display: inline-block;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+// 読み込み時transition制御(使用する場合、bodyに追加)
+.is_loadTransition {
+  transition: none !important;
+  * {
+    transition: none !important;
+  }
+}

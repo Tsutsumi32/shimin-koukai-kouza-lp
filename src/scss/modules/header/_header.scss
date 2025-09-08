@@ -1,0 +1,61 @@
+/*-==========================================================================
+header
+==========================================================================*/
+@use '../../utils/' as *;
+/*==========================================================================
+use component
+/*==========================================================================*/
+
+/*==========================================================================*/
+.header {
+  background-color: $color_theme;
+  color: $color_white;
+  padding-block: .8rem;
+  @include pc {
+    padding-block: 1.6rem 1rem;
+  }
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &_text {
+    @include font(15.2, 26, 0, 500);
+    border: max(.1rem, 1px) solid $color_white;
+    padding: .2rem .6rem;
+    display: flex;
+    gap: 1.6rem;
+    position: relative;
+    @include pc {
+      gap: 3rem;
+      padding: .1rem 1.6rem;
+    }
+    @include pc {
+      font-size: 3.2rem;
+    }
+    &::before {
+      content: "";
+      display: block;
+      border-left: max(.1rem, 1px) solid $color_white;
+      height: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(20deg);
+      @include pc {
+        height: 100%
+      }
+    }
+  }
+
+  &_textBottom {
+    @include font(15.2, 26, 0, 500);
+    @include pc {
+      font-size: 3.2rem;
+    }
+  }
+}
+

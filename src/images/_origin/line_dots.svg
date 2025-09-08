@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 224.27">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-dasharray: 0 14.54;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #164097;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 6px;
+      }
+    </style>
+  </defs>
+  <g id="design">
+    <g>
+      <line class="cls-2" x1="3" y1="3" x2="3" y2="3"/>
+      <line class="cls-1" x1="3" y1="17.54" x2="3" y2="213.99"/>
+      <line class="cls-2" x1="3" y1="221.27" x2="3" y2="221.27"/>
+    </g>
+  </g>
+</svg>

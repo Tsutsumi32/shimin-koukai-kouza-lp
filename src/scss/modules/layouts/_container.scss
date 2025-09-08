@@ -1,0 +1,51 @@
+/*-==========================================================================
+layout - container
+==========================================================================*/
+@use '../../utils/' as *;
+/*==========================================================================*/
+.ly_container {
+  @include container;
+  &.__mx785 {
+    @include container(785);
+  }
+  &.__mx917 {
+    @include container(917);
+  }
+  &.__mx922 {
+    @include container(922);
+  }
+  &.__mx962 {
+    @include container(962);
+  }
+  &.__mx950 {
+    @include container(950);
+  }
+  &.__mx976 {
+    @include container(976);
+  }
+  &.__mx982 {
+    @include container(982);
+  }
+  &.__mx1023 {
+    @include container(1023);
+  }
+  &.__mx1028 {
+    @include container(1028);
+  }
+  &.__mx1180 {
+    @include container(1180);
+  }
+  // &.__spMax {
+  //   @include sp-layout-only {
+  //     max-width: unset;
+  //     width: 100%;
+  //   }
+  // }
+  &.__left {
+    @include pc {
+      max-width: 128.8rem;
+      width: 95%;
+      margin-inline: auto 0;
+    }
+  }
+}

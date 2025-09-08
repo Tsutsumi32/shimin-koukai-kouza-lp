@@ -1,0 +1,125 @@
+/*-==========================================================================
+block - contact
+==========================================================================*/
+@use '../../utils/' as *;
+
+/*==========================================================================*/
+.bl_contact {
+  $_bk: &;
+  border-radius: 0 0 0 3rem;
+  border: .6rem solid $color_theme;
+  padding: 2rem 4rem 2rem 1rem;
+  margin-top: 2.8rem;
+  background-color: $color_white;
+  @include tab-only {
+    padding-inline: 3rem;
+  }
+  @include pc {
+    margin-top: 4rem;
+    padding: 2rem 3.6rem 3.6rem;
+    border-radius: 0 0 0 5rem;
+  }
+
+  &#{$_bk}__reverse {
+    border-radius: 0 0 3rem 0;
+    padding: 2rem 1rem 2rem 4rem;
+    @include pc {
+      border-radius: 0 0 5rem 0;
+    }
+    .bl_contact_body,
+    .bl_contact_ttl {
+      @include pc {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &_ttl {
+    @include font(24, 24, 0, 700);
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    @include pc {
+      font-size: 3.2rem;
+      gap: 1rem;
+      max-width: 109.6rem;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      @include background-image('icon_tel', $_type: 'svg', $_size: contain);
+      width: 5.2rem;
+      height: 5.2rem;
+    }
+  }
+
+  &_body {
+    @include pc {
+      max-width: 109.6rem;
+    }
+    &:nth-of-type(n + 2) {
+      margin-top: 4rem;
+    }
+  }
+
+  &_txt {
+    @include font(18, 28, 0, 500);
+    color: $color_theme;
+    margin-top: 1rem;
+    padding-bottom: .4rem;
+    border-bottom: max(.2rem, 2px) solid $color_theme;
+    @include pc {
+      font-size: 2.2rem
+    }
+  }
+
+  &_list {
+    @include font(18, 24, 0, 500);
+    margin-top: 1.6rem;
+    @include pc {
+      font-size: 2.2rem;
+    }
+  }
+
+  &_listItem {
+    @include font(18, 24, 0, 500);
+    position: relative;
+    padding-left: 1.8rem;
+    margin-top: .6rem;
+    @include pc {
+      font-size: 2.2rem;
+    }
+
+    &:last-of-type {
+      margin-bottom: .6rem;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      background-color: $color_theme;
+      width: .7rem;
+      height: .7rem;
+      margin-top: .4rem;
+      position: absolute;
+      top: .4rem;
+      left: .4rem;
+      @include pc {
+        top: .8rem;
+      }
+    }
+  }
+
+  &_privacy {
+    @include font(18, 24, 0, 500);
+    margin-top: 1.8rem;
+    @include pc {
+      font-size: 2.2rem;
+    }
+  }
+
+  &_privacyLink {
+    margin-top: 1rem;
+  }
+}

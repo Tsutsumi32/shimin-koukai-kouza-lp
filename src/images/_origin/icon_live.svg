@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 124.55 101.86">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #164097;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-4 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <polygon class="cls-3" points="124.3 19.81 .24 71.88 0 20.4 124.55 71.3 124.3 19.81"/>
+    </clipPath>
+  </defs>
+  <g id="design">
+    <g>
+      <ellipse class="cls-1" cx="62.27" cy="50.93" rx="51.5" ry="50.93"/>
+      <g>
+        <circle class="cls-2" cx="62.27" cy="45.85" r="10.06"/>
+        <g class="cls-5">
+          <g>
+            <circle class="cls-4" cx="62.27" cy="45.85" r="17.67"/>
+            <circle class="cls-4" cx="62.27" cy="45.85" r="25.54"/>
+            <circle class="cls-4" cx="62.27" cy="45.85" r="33.88"/>
+          </g>
+        </g>
+      </g>
+      <g>
+        <path class="cls-2" d="M44.64,73.45h2.66v11.11h5.42v2.23h-8.08v-13.34Z"/>
+        <path class="cls-2" d="M55.05,73.45h2.66v13.34h-2.66v-13.34Z"/>
+        <path class="cls-2" d="M59.26,73.45h2.79l1.76,6.5c.41,1.48.7,2.81,1.12,4.3h.09c.43-1.49.72-2.83,1.13-4.3l1.73-6.5h2.7l-4.07,13.34h-3.19l-4.07-13.34Z"/>
+        <path class="cls-2" d="M72.11,73.45h8.17v2.23h-5.51v3.08h4.68v2.23h-4.68v3.57h5.71v2.23h-8.37v-13.34Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

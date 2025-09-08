@@ -1,0 +1,18 @@
+/*-==========================================================================
+block - eventList
+==========================================================================*/
+@use '../../utils/' as *;
+/*==========================================================================*/
+.bl_eventListParent {
+  position: relative;
+}
+
+.bl_eventList {
+  display: grid;
+  grid-template-columns: 1;
+  gap: 3rem;
+  @include pc {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+}

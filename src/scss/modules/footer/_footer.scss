@@ -1,0 +1,112 @@
+/*-==========================================================================
+footer
+==========================================================================*/
+@use '../../utils/' as *;
+/*==========================================================================*/
+.footerCregit {
+  background-color: $color_theme;
+  padding-block: 4rem 3rem;
+  @include pc {
+    padding-block: 6rem 10rem;
+  }
+  &_lead {
+    @include font(18, 24, 0, 500);
+    color: $color_white;
+    border-bottom: max(.2rem, 2px) solid $color_white;
+    padding-bottom: 1.2rem;
+    @include pc {
+      font-size: 2.2rem;
+      padding-bottom: 3rem;
+    }
+  }
+  &_body {
+    color: $color_white;
+    margin-top: 1.6rem;
+  }
+  &_list {
+    @include font(17.6, 24, 0, 500);
+    text-align: center;
+    @include pc {
+      font-size: 2.2rem;
+      text-align: left;
+    }
+    &:nth-of-type(n + 2) {
+      margin-top: 4rem;
+    }
+  }
+  &_listInner {
+    margin-top: 4rem;
+    @include pc {
+      display: flex;
+      gap: 6rem;
+    }
+  }
+  &_textInner {
+    @include pc {
+      width: 42rem;
+    }
+  }
+  &_logos {
+    background-color: $color_white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2.8rem;
+    padding: 1rem 2rem;
+    margin-top: 4.5rem;
+    @include pc {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+  }
+  &_logo {
+    width: calc(50% - 1.4rem);
+    &:first-of-type {
+      position: relative;
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        width: 1.4rem;
+        height: max(.1rem, 1px);
+        position: absolute;
+        top: 50%;
+        right: -.9rem;
+        transform: translate(100%, -50%);
+        background-color: $color_black;
+      }
+      &::before {
+        transform: translate(100%, -50%) rotate(45deg);
+      }
+      &::after {
+        transform: translate(100%, -50%) rotate(-45deg);
+      }
+    }
+    &:last-of-type {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.footer_bottom {
+  background-color: $color_theme_light4;
+  text-align: center;
+  padding: 1.6rem 1.4rem;
+  @include pc {
+    padding-block: 3rem;
+  }
+  &_text {
+    @include font(12, 18, 0, 500);
+    @include pc {
+      font-size: 2.6rem;
+    }
+  }
+  &_textSmall {
+    @include font(10, 18, 0, 500);
+    @include pc {
+      font-size: 2rem;
+    }
+  }
+}

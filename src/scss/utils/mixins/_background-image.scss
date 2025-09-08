@@ -1,0 +1,39 @@
+@use '../variables/variables' as *;
+
+/******************************************************************
+* background-image　背景画像を設定する
+* @param $_filename ファイル名
+* @param $_size background-size
+* @param $_type 拡張子 jpg or png(デフォルト)
+* @param $_position background-position
+* @param $_repeat background-repeat
+*******************************************************************/
+@mixin background-image($_filename,
+  $_type: 'jpg',
+  $_size: cover,
+  $_position: center,
+  $_repeat: no-repeat) {
+
+  @if $_type =='svg' {
+    background-image: url(#{$image_path_origin}#{$_filename}.#{$_type});
+  }
+
+  @else {
+    // デフォルト
+    background-image: url(#{$image_path_half}#{$_filename}_half.#{$_type});
+
+    // WebP対応ブラウザ
+    @supports (background-image: url(#{$image_path_webp}#{$_filename}.webp)) {
+      background-image: url(#{$image_path_webp}#{$_filename}.webp);
+    }
+
+    // AVIF対応ブラウザ
+    @supports (background-image: url(#{$img_path_avif}#{$_filename}.avif)) {
+      background-image: url(#{$img_path_avif}#{$_filename}.avif);
+    }
+  }
+
+  background-size: $_size;
+  background-position: $_position;
+  background-repeat: $_repeat;
+}

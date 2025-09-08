@@ -1,0 +1,19 @@
+
+@use './strip-unit' as *;
+/**
+* rem変換 ※375以下ではvwとする
+* @param $_number 数値
+* 例) 32pxをremに変換 (32);
+*/
+/******************************************************************
+* rem　rem変換 ※375以下ではvwとする
+* @param $_number 数値
+* @param $_width_min_sp この数値以下の画面ではvw
+*  例) 32pxをremに変換 (32);
+*******************************************************************/
+@function rem($_number, $_width_min_sp: 375) {
+	@if $_number < 0 {
+		@return max(strip-unit($_number) / strip-unit($base_fontsize) * 1rem, calc(strip-unit($_number) / strip-unit($_width_min_sp) * 100vw));
+	}
+		@return min(strip-unit($_number) / strip-unit($base_fontsize) * 1rem, calc(strip-unit($_number) / strip-unit($_width_min_sp) * 100vw));
+}

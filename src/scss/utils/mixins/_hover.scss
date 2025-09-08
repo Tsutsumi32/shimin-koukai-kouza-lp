@@ -1,0 +1,49 @@
+@use '../variables/variables' as *;
+/******************************************************************
+* hover判定
+*******************************************************************/
+/* hover 非hover
+----------------------------------------------------------------- */
+@mixin hover() {
+	//hover(PC)
+	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			@content;
+		}
+	}
+
+	//非hover(スマホ)
+	@media (hover: hover), (hover: none) {
+		&:active {
+			@content;
+		}
+	}
+}
+
+/* hoverのみ
+----------------------------------------------------------------- */
+@mixin hover-only() {
+	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+/* hover時　カラースタイル
+----------------------------------------------------------------- */
+@mixin hover-color() {
+	transition: color .3s;
+	@include hover {
+		// color: colors(main);
+	}
+}
+
+/* hover時　透過スタイル
+----------------------------------------------------------------- */
+@mixin hover-opacity() {
+	transition: opacity .3s;
+	@include hover {
+		opacity: .65;
+	}
+}

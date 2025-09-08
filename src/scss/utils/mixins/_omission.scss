@@ -1,0 +1,26 @@
+@use '../variables/variables' as *;
+/******************************************************************
+* ommision　行数による末尾「...」省略
+* @param $l_ine:行数
+* @param $_font_size:フォントサイズ 単位あり
+* @param $l_ine_height:行間 (例 1.5)
+* @param $_height_set:heightに高さを設定するかどうか(設定する場合true)
+*******************************************************************/
+@mixin omission($l_ine, $_font_size, $l_ine_height, $_height_set: 0) {
+  @if $_height_set != 'true' {
+    max-height: heightString($l_ine, $_font_size, $l_ine_height);
+  }
+  @else {
+    height: heightString($l_ine, $_font_size, $l_ine_height);
+  }
+  overflow: hidden;
+  @if $l_ine == 1 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $l_ine;
+  }
+}
