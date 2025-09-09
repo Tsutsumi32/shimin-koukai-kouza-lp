@@ -519,7 +519,7 @@ $decoration_position_sp: (-19rem, -19rem), (16rem, -19rem), (-19rem, 22rem),
   &_body {
     $_bk: &;
     padding-inline: 1.6rem;
-
+  
     &#{$_bk}__pcFlex {
       @include pc {
         display: flex;
@@ -545,6 +545,8 @@ $decoration_position_sp: (-19rem, -19rem), (16rem, -19rem), (-19rem, 22rem),
     @include font(24, 32, 0, 700);
     text-align: center;
     padding-block: 1.7rem 2.5rem;
+    position: relative;
+    z-index: 1;
 
     @include pc {
       font-size: 3.2rem;
@@ -739,16 +741,11 @@ $decoration_position_sp: (-19rem, -19rem), (16rem, -19rem), (-19rem, 22rem),
   position: absolute;
   z-index: -1;
 
-  @include pc {
-    z-index: 1;
-  }
-
   &#{$_bk}__1 {
     transform: translate(-70%, -100%);
     top: 3rem;
     left: 7rem;
     width: 30.2rem;
-    z-index: -1;
 
     @include pc {
       transform: translate(-100%, -100%);
@@ -769,6 +766,7 @@ $decoration_position_sp: (-19rem, -19rem), (16rem, -19rem), (-19rem, 22rem),
       top: -6rem;
       right: 7rem;
       width: 29.5rem;
+      z-index: 1;
     }
   }
 
@@ -783,6 +781,7 @@ $decoration_position_sp: (-19rem, -19rem), (16rem, -19rem), (-19rem, 22rem),
       top: 0;
       left: 5rem;
       width: 30.9rem;
+      z-index: 1;
     }
   }
 

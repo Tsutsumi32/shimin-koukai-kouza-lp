@@ -37,11 +37,11 @@
     rel="stylesheet">
 
   <!-- css -->
-  <link rel="stylesheet" href="./src/css/common.css">
-  <link rel="stylesheet" href="./src/css/page.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/page.css">
 
   <!-- js -->
-  <script type="module" src="./src/js/pages/top.js"></script>
+  <script type="module" src="./js/pages/top.js"></script>
 </head>
 
 <body class="is_nojs">
@@ -59,17 +59,35 @@
     <div class="un-mv">
       <h1 class="un-mv_text js_mv_text">
         <picture>
-          <source media="(min-width: 960px)" srcset="./src/images/_origin/text_mv.svg">
-          <img src="./src/images/_origin/text_mv_sp.svg" alt="ひざの痛み相談室 変形性膝関節症とは？ ～原因から最新治療、未来の医療まで～" width=""
+          <source media="(min-width: 960px)" srcset="./images/_origin/text_mv.svg">
+          <img src="./images/_origin/text_mv_sp.svg" alt="ひざの痛み相談室 変形性膝関節症とは？ ～原因から最新治療、未来の医療まで～" width=""
             height="">
         </picture>
       </h1>
       <div class="un-mv_illust">
         <picture>
-          <img src="./src/images/_origin/img_mv_illust1.png" alt="" width="357" height="377">
+          <source srcset="./images/avif/img_mv_illust1.avif" type="image/avif">
+          <source srcset="./images/webp/img_mv_illust1.webp" type="image/webp">
+          <img
+            src="./images/half/img_mv_illust1_half.png"
+            srcset="
+              ./images/half/img_mv_illust1_half.png 1x,
+              ./images/_origin/img_mv_illust1.png 2x
+            "
+            width="357" height="377"
+            alt="">
         </picture>
         <picture>
-          <img src="./src/images/_origin/img_mv_illust2.png" alt="" width="" 349 height="480">
+          <source srcset="./images/avif/img_mv_illust2.avif" type="image/avif">
+          <source srcset="./images/webp/img_mv_illust2.webp" type="image/webp">
+          <img
+            src="./images/half/img_mv_illust2_half.png"
+            srcset="
+              ./images/half/img_mv_illust2_half.png 1x,
+              ./images/_origin/img_mv_illust2.png 2x
+            "
+            width="349" height="480"
+            alt="">
         </picture>
       </div>
       <div>
@@ -93,7 +111,7 @@
               <div>
                 <div class="bl_eventCard_head">
                   <figure class="bl_eventCard_icon">
-                    <img src="./src/images/_origin/icon_live.svg" alt="" width="100" height="100">
+                    <img src="./images/_origin/icon_live.svg" alt="" width="100" height="100">
                   </figure>
                   <h3 class="bl_eventCard_ttl">
                     <span class="bl_eventCard_em">LIVE配信</span> スマホ、<br>パソコンなどで視聴
@@ -112,7 +130,7 @@
               <div>
                 <div class="bl_eventCard_head">
                   <figure class="bl_eventCard_icon">
-                    <img src="./src/images/_origin/icon_tokyo.svg" alt="" width="100" height="100">
+                    <img src="./images/_origin/icon_tokyo.svg" alt="" width="100" height="100">
                   </figure>
                   <h3 class="bl_eventCard_ttl">
                     <span class="bl_eventCard_em">東京会場</span> へ行く
@@ -130,7 +148,7 @@
               <div>
                 <div class="bl_eventCard_head">
                   <figure class="bl_eventCard_icon">
-                    <img src="./src/images/_origin/icon_osaka.svg" alt="" width="100" height="100">
+                    <img src="./images/_origin/icon_osaka.svg" alt="" width="100" height="100">
                   </figure>
                   <h3 class="bl_eventCard_ttl">
                     <span class="bl_eventCard_em">大阪会場</span> へ行く
@@ -175,8 +193,18 @@
             </div>
             <figure class="un_infoSection_img">
               <picture>
-                <source media="(min-width: 768px)" srcset="./src/images/_origin/img_intro_illust.png">
-                <img src="./src/images/_origin/img_intro_illust_sp.png" alt="">
+                <source media="(min-width: 768px)" srcset="./images/avif/img_intro_illust.avif" type="image/avif">
+                <source media="(min-width: 768px)" srcset="./images/webp/img_intro_illust.webp" type="image/webp">
+                <source media="(min-width: 768px)" srcset="./images/half/img_intro_illust_half.png 1x, ./images/_origin/img_intro_illust.png 2x">
+                <source srcset="./images/avif/img_intro_illust_sp.avif" type="image/avif">
+                <source srcset="./images/webp/img_intro_illust_sp.webp" type="image/webp">
+                <img
+                  src="./images/half/img_intro_illust_sp_half.png"
+                  srcset="
+                    ./images/half/img_intro_illust_sp_half.png 1x,
+                    ./images/_origin/img_intro_illust_sp.png 2x
+                  "
+                  alt="">
               </picture>
             </figure>
           </div>
@@ -193,15 +221,15 @@
     <section class="un_program">
       <div class="ly_container">
         <h2 class="el_ttl el_ttl__program">
-          <img src="./src/images/_origin/text_program.svg" alt="プログラム">
+          <img src="./images/_origin/text_program.svg" alt="プログラム">
         </h2>
 
         <div class="un_seminar">
           <div class="js_fade un_decoration_imgWrap un_decoration_imgWrap__1">
-            <img src="./src/images/_origin/img_decoration.svg" alt="">
+            <img src="./images/_origin/img_decoration.svg" alt="">
           </div>
           <div class="js_fade un_decoration_imgWrap un_decoration_imgWrap__2">
-            <img src="./src/images/_origin/img_decoration.svg" alt="">
+            <img src="./images/_origin/img_decoration.svg" alt="">
           </div>
           <div class="un_seminar_head">
             <span>第１部</span>
@@ -223,7 +251,16 @@
               <div class="un_seminar_prof">
                 <div class="un_seminar_prof-img">
                   <picture>
-                    <img src="./src/images/_origin/human_doctor.png" alt="" width="182" height="219">
+                    <source srcset="./images/avif/human_doctor.avif" type="image/avif">
+                    <source srcset="./images/webp/human_doctor.webp" type="image/webp">
+                    <img
+                      src="./images/half/human_doctor_half.png"
+                      srcset="
+                        ./images/half/human_doctor_half.png 1x,
+                        ./images/_origin/human_doctor.png 2x
+                      "
+                      width="182" height="219"
+                      alt="">
                   </picture>
                 </div>
                 <div class="un_seminar_prof-info">
@@ -240,10 +277,10 @@
 
         <div class="un_seminar">
           <div class="js_fade un_decoration_imgWrap un_decoration_imgWrap__3">
-            <img src="./src/images/_origin/img_decoration.svg" alt="">
+            <img src="./images/_origin/img_decoration.svg" alt="">
           </div>
           <div class="js_fade un_decoration_imgWrap un_decoration_imgWrap__4">
-            <img src="./src/images/_origin/img_decoration.svg" alt="">
+            <img src="./images/_origin/img_decoration.svg" alt="">
           </div>
           <div class="un_seminar_head">
             <span>第２部</span>
@@ -273,7 +310,7 @@
 
         <div class="bl_notice">
           <div class="js_fade un_decoration_imgWrap un_decoration_imgWrap__5">
-            <img src="./src/images/_origin/img_decoration.svg" alt="">
+            <img src="./images/_origin/img_decoration.svg" alt="">
           </div>
           <h2 class="bl_notice_ttl">注意事項</h2>
           <ul class="bl_notice_list">
@@ -304,7 +341,7 @@
               <div>
                 <div class="bl_eventCard_head">
                   <figure class="bl_eventCard_icon">
-                    <img src="./src/images/_origin/icon_live.svg" alt="" width="100" height="100">
+                    <img src="./images/_origin/icon_live.svg" alt="" width="100" height="100">
                   </figure>
                   <h3 class="bl_eventCard_ttl">
                     <span class="bl_eventCard_em">LIVE配信</span> スマホ、<br>パソコンなどで視聴
@@ -323,7 +360,7 @@
               <div>
                 <div class="bl_eventCard_head">
                   <figure class="bl_eventCard_icon">
-                    <img src="./src/images/_origin/icon_tokyo.svg" alt="" width="100" height="100">
+                    <img src="./images/_origin/icon_tokyo.svg" alt="" width="100" height="100">
                   </figure>
                   <h3 class="bl_eventCard_ttl">
                     <span class="bl_eventCard_em">東京会場</span> へ行く
@@ -341,7 +378,7 @@
               <div>
                 <div class="bl_eventCard_head">
                   <figure class="bl_eventCard_icon">
-                    <img src="./src/images/_origin/icon_osaka.svg" alt="" width="100" height="100">
+                    <img src="./images/_origin/icon_osaka.svg" alt="" width="100" height="100">
                   </figure>
                   <h3 class="bl_eventCard_ttl">
                     <span class="bl_eventCard_em">大阪会場</span> へ行く
@@ -364,19 +401,19 @@
 
     <div class="un_access">
       <h2 class="el_ttl el_ttl__access">
-        <img src="./src/images/_origin/text_access.svg" alt="アクセス">
+        <img src="./images/_origin/text_access.svg" alt="アクセス">
       </h2>
       <div class="un_access_contents">
         <div class="js_fade un_decoration_imgWrap un_decoration_imgWrap__6">
-          <img src="./src/images/_origin/img_decoration.svg" alt="">
+          <img src="./images/_origin/img_decoration.svg" alt="">
         </div>
         <div class="js_fade un_decoration_imgWrap un_decoration_imgWrap__7">
-          <img src="./src/images/_origin/img_decoration.svg" alt="">
+          <img src="./images/_origin/img_decoration.svg" alt="">
         </div>
         <div class="bl_access">
           <div class="bl_access_info">
             <div class="bl_access_label">
-              <img src="./src/images/_origin/icon_tokyo.svg" alt="" width="100" height="100">
+              <img src="./images/_origin/icon_tokyo.svg" alt="" width="100" height="100">
               <p class="bl_access_date">10月5日　東京会場<br>LIVE配信もあります！</p>
             </div>
             <ul class="bl_access_list">
@@ -449,15 +486,15 @@
       </div>
       <div class="un_access_contents un_access_contents__reverse">
         <div class="js_fade un_decoration_imgWrap un_decoration_imgWrap__8">
-          <img src="./src/images/_origin/img_decoration.svg" alt="">
+          <img src="./images/_origin/img_decoration.svg" alt="">
         </div>
         <div class="js_fade un_decoration_imgWrap un_decoration_imgWrap__9">
-          <img src="./src/images/_origin/img_decoration.svg" alt="">
+          <img src="./images/_origin/img_decoration.svg" alt="">
         </div>
         <div class="bl_access">
           <div class="bl_access_info">
             <div class="bl_access_label">
-              <img src="./src/images/_origin/icon_osaka.svg" alt="" width="100" height="100">
+              <img src="./images/_origin/icon_osaka.svg" alt="" width="100" height="100">
               <p class="bl_access_date">10月19日　大阪会場</p>
             </div>
             <ul class="bl_access_list">
@@ -519,10 +556,10 @@
       <div class="ly_container">
         <div class="bl_notice">
           <div class="js_fade un_decoration_imgWrap un_decoration_imgWrap__10">
-            <img src="./src/images/_origin/img_decoration.svg" alt="">
+            <img src="./images/_origin/img_decoration.svg" alt="">
           </div>
           <div class="js_fade un_decoration_imgWrap un_decoration_imgWrap__11">
-            <img src="./src/images/_origin/img_decoration.svg" alt="">
+            <img src="./images/_origin/img_decoration.svg" alt="">
           </div>
           <h2 class="bl_notice_ttl">注意事項</h2>
           <ul class="bl_notice_list">
@@ -574,13 +611,35 @@
             </div>
             <ul class="footerCregit_logos" aria-label="関係団体">
               <li class="footerCregit_logo">
-                <img src="./src/images/_origin/logo_nihonseikei.png" alt="公益社団法人日本整形外科学会" width="299" height="74">
+                <picture>
+                  <source srcset="./images/avif/logo_nihonseikei.avif" type="image/avif">
+                  <source srcset="./images/webp/logo_nihonseikei.webp" type="image/webp">
+                  <img
+                    src="./images/half/logo_nihonseikei_half.png"
+                    srcset="
+                      ./images/half/logo_nihonseikei_half.png 1x,
+                      ./images/_origin/logo_nihonseikei.png 2x
+                    "
+                    width="299" height="74"
+                    alt="公益社団法人日本整形外科学会">
+                </picture>
               </li>
               <li class="footerCregit_logo">
-                <img src="./src/images/_origin/logo_nihonsaisei.png" alt="一般社団法人 日本再生医療学会" width="282" height="74">
+                <picture>
+                  <source srcset="./images/avif/logo_nihonsaisei.avif" type="image/avif">
+                  <source srcset="./images/webp/logo_nihonsaisei.webp" type="image/webp">
+                  <img
+                    src="./images/half/logo_nihonsaisei_half.png"
+                    srcset="
+                      ./images/half/logo_nihonsaisei_half.png 1x,
+                      ./images/_origin/logo_nihonsaisei.png 2x
+                    "
+                    width="282" height="74"
+                    alt="一般社団法人 日本再生医療学会">
+                </picture>
               </li>
               <li class="footerCregit_logo">
-                <img src="./src/images/_origin/logo_kokuritsuiryou.svg" alt="国立研究開発法人 日本医療研究開発機構（AMED）" width="639"
+                <img src="./images/_origin/logo_kokuritsuiryou.svg" alt="国立研究開発法人 日本医療研究開発機構（AMED）" width="639"
                   height="93">
               </li>
             </ul>
